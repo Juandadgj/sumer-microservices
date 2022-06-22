@@ -1,5 +1,5 @@
 # sumer-microservices
-Ejemplo de sencillo de implementación de colas con Golang y RabbitMQ  
+Ejemplo sencillo de implementación de colas con Golang y RabbitMQ  
 ## Sobre el ejemplo
 Para este caso encontrarás una de las tantas soluciones a un problema común:
 ¿Qué pasa cuándo una request conlleva muchos procesos cómo para simplemente
@@ -19,7 +19,7 @@ Al ejecutar este servicio podrás hacer una simple petición POST a la ruta loca
 en forma de JSON los siguiente datos: {"ID": int, "Client": string y "Amount": float}. Este servicio a travez 
 de sleep simula estar trabajando y nos entrega una respuesta en 700ms aproximadamente con la confirmación, una 
 velocidad aceptable. Hecha la verificación envía un evento a RabbitMQ con el payment y nuestro servicio de 
-notificaciones hace el resto.
+notificaciones hace el resto en apróxidamente 3000ms.
 ## notifications
 Este servicio por su parte va a estar atento a los eventos que ingresen a la cola he intentará resolverlos de inmediato. 
 Una de las ventajas que tiene implementar este sistema es que si llegásemos a tener cuellos de botella podríamos simplemente 
